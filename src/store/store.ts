@@ -22,8 +22,11 @@ export class Store {
 
   private reduce(state, action) {
     const newState = {};
+    console.log(state);
     for (const prop in this.reducers) {
+      console.log("its " + state[prop]);
       newState[prop] = this.reducers[prop](state[prop], action);
+      console.log(" then its " + state[prop]);
     }
 
     return newState;
