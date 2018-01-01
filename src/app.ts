@@ -22,6 +22,11 @@ button.addEventListener(
 
     const payload = { label: input.value, complete: false };
 
+    store.dispatch({
+      type: "ADD TODO",
+      payload
+    });
+
     console.log(payload);
 
     input.value = "";
